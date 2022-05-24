@@ -1,0 +1,294 @@
+:root {
+    --body-primary-color: #fff;
+    --body-secondary-color: #00E6FF;
+    --style-color: #e93d3d;
+    --text-color: #000;
+    --border-color: #000;
+
+    /* secondary colors */
+
+    --webkit-color: #1ae5ec;
+    --hover-color: #f86969;
+
+    --mono-font: monospace;
+
+}
+
+.theme-two {
+    --body-primary-color: #e93d3d;
+    --body-secondary-color: #00E6FF;
+    --style-color: #0d3e5a;
+    --text-color: #000;
+    --border-color: #fff;
+
+    /* secondary colors */
+
+    --webkit-color: #e76418;
+    --hover-color: #1872a7;
+
+    --mono-font: Georgia;
+}
+
+.theme-three {
+    --body-primary-color: #00CD9A;
+    --body-secondary-color: #00E6FF;
+    --style-color: #140841;
+    --text-color: #ffffff;
+    --border-color: #7F325D;
+
+    /* secondary colors */
+
+    --webkit-color: #e76418;
+    --hover-color: #00675F;
+
+    --mono-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.theme-four {
+    --body-primary-color: #FF00DE;
+    --body-secondary-color: #00E6FF;
+    --style-color: #3cff00;
+    --text-color: #52424E;
+    --border-color: #007C4F;
+
+    /* secondary colors */
+
+    --webkit-color: #790067;
+    --hover-color: #B8A6B3;
+
+    --mono-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ------Styling Starts Here------ */
+
+/* Global Styling------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+body {
+    background-image: linear-gradient(to right, #f195ca, #df4451);
+    margin: 5px auto;
+    max-width: 1000px;
+}
+
+img {
+    width: 290px;
+    border-radius: 50%;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ------------Main Styling Starts Here----------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+/* ----Cover Art and Info Styling----- */
+.main-box {
+    background-image: linear-gradient(var(--body-primary-color), var(--body-secondary-color));
+    padding: 10px 20px;
+}
+
+
+.main-plate {
+    display: flex;
+    justify-content: space-between;
+    outline: 1px solid red;
+    height: 400px;
+}
+
+.art-style {
+    position: relative;
+}
+
+.art-sec,
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-src {
+    background-image: url(/Source/CoverArt/Lake.jpg);
+    opacity: 0.6;
+    background-size: cover;
+    background-position: center;
+    width: 400px;
+    height: 400px;
+}
+
+.art-sec {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    transition: 0.3s linear;
+}
+
+.player-src .art-sec .circle {
+    border-radius: 50%;
+    width: 290px;
+    height: 290px;
+}
+
+/* ----Cover Art Animation--- */
+
+img {
+    animation: animeRotate 10s linear infinite;
+    animation-play-state: paused;
+}
+
+
+@keyframes animeRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.playlist-number {
+    width: 75px;
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border-radius: 5px;
+    padding: 0.25rem 0.6rem;
+    font-size: 1.5rem;
+    outline: 2px solid #000;
+    display: flex;
+    justify-content: center;
+}
+
+/* -------PlayList Styling--------- */
+
+.playlist {
+    padding: 2em;
+    margin-inline: auto;
+    font-family: 'ubuntu', sans-serif;
+}
+
+.playlist h1 {
+    font-family: 'ubuntu';
+    margin-block: 0.5em;
+    font-weight: 800;
+}
+
+.playlist h2 {
+    transition: 0.3s linear;
+    cursor: pointer;
+    margin-block: 1em;
+    padding: 0.2em;
+}
+
+.song-playing.active {
+    transform: scale(1.1);
+    color: #e93d3d;
+}
+
+.playlist h2:hover {
+    transform: scale(1.1);
+}
+
+
+/* --------Volume Bar Styling Here------ */
+.vol-bar {
+    margin-block: 1rem;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vol-bar input {
+    margin-left: 1rem;
+}
+
+/* -------Current Song Info, Music Control and Progressbar Styling Here------- */
+
+.music-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.music-controller {
+    min-width: 250px;
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.music-controller i:nth-child(2) {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.music-info span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.track-info {
+    width: 200px;
+}
+
+/* ------Progress Bar And Volume Bar Styling Starts Here---- */
+
+input[type='range'] {
+
+    -webkit-appearance: none;
+    border-radius: 5px;
+    height: 2px;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    background-color: goldenrod;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    background-color: goldenrod;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    cursor: pointer;
+}

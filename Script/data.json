@@ -1,0 +1,43 @@
+[
+    {
+        "songNo": 1,
+        "songName": "Lake",
+        "artistName": "Janee",
+        "songPath": "/Source/music/Lake.mp3",
+        "CovertArt": "/Source/CoverArt/Lake.jpg"
+    },
+    {
+        "songNo": 2,
+        "songName": "Royalty",
+        "artistName": "Egzod & Maestro Chives",
+        "songPath": "/Source/music/Royalty.mp3",
+        "CovertArt": "/Source/CoverArt/Royalty.jpg"
+    },
+    {
+        "songNo": 3,
+        "songName": "Symphony",
+        "artistName": "Arc North",
+        "songPath": "/Source/music/Symphony.mp3",
+        "CovertArt": "/Source/CoverArt/Symphony.jpg"
+    },
+    {
+        "songNo": 4,
+        "songName": "Careless",
+        "artistName": "NEFFEX!",
+        "songPath": "/Source/music/Careless.mp3",
+        "CovertArt": "/Source/CoverArt/Careless.jpg"
+    },
+    {
+        "songNo": 5,
+        "songName": "Why Do I",
+        "artistName": "Unkown Brain",
+        "songPath": "/Source/music/Unkown.mp3",
+        "CovertArt": "/Source/CoverArt/Unknown.jpg"
+    },   {
+        "songNo": 6,
+        "songName": "It's Alright",
+        "artistName": "Mother Mother",
+        "songPath": "/Source/music/Alright.mp3",
+        "CovertArt": "/Source/CoverArt/Alright.jpg"
+    }
+]

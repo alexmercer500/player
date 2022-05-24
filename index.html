@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@200;300;400;500;600&family=Ubuntu:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Stylesheet/stylesheet.css">
+    <title>RM Player</title>
+</head>
+
+<body>
+    <div class="main-box">
+        <header>
+            <h1>RM-Player</h1>
+            <h1>Theme</h1>
+        </header>
+        <main>
+            <div class="main-plate">
+                <div class="art-style">
+                    <div class="player-src">
+                    </div>
+                    <div class="art-sec">
+                        <div class="circle">
+                            <img id="coverArt" src="Source/CoverArt/Lake.jpg" alt="CoverArt">
+                        </div>
+                    </div>
+                    <h4 class="playlist-number">1/6</h4>
+                </div>
+                <div class="playlist">
+                    <div class="song-list">
+                        <h1>Play-List</h1>
+                        <div id="song-items">
+                            <h2 class="song-playing"> Lake - Janee</h2>
+                            <h2 class="song-playing"> Royalty - Egzod & Maestro Chives</h2>
+                            <h2 class="song-playing"> Symphony - Arc North</h2>
+                            <h2 class="song-playing"> Careless - NEFFEX!</h2>
+                            <h2 class="song-playing"> Why Do I - Unkown Brain</h2>
+                            <h2 class="song-playing"> It's Alright - Mother Mother</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="vol-bar">
+                <i style="width: 55px;" class="mute-btn fa-solid fa-volume-high fa-2x"></i>
+                <input type="range" min="0" max="100" value="20" id="vol-bar">
+            </div>
+            <div class="progress">
+                <input class="seek-bar" type="range" min="0" value="0">
+                <div class="music-info">
+                    <div class="track-info">
+                        <h1 class="song-title">Lake</h1>
+                        <h2 class="song-artist">Janee</h2>
+                    </div>
+                    <div class="music-controller">
+                        <i class="fa-solid fa-backward fa-2x"></i>
+                        <i class="master-play fa-solid fa-play fa-3x"></i>
+                        <i class="fa-solid fa-forward fa-2x"></i>
+                        <i class="master-stop fa-solid fa-stop fa-2x"></i>
+                    </div>
+                    <span>
+                        <h1 class="current-time">0m:0s</h1>
+                        <h1>/</h1>
+                        <h1 class="song-duration">0m:0m</h1>
+                    </span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/Script/app.js"></script>
+</body>
+
+</html>
