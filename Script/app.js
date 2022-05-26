@@ -179,7 +179,11 @@ function songNumber(songs, i) {
         console.log(i)
         gaana.src = allMediaLibrary[i].songPath;
         songPlayStatus(i)
-        songCurrentStatus()
+        coverArt.src = allMediaLibrary[i].coverArt;
+        coverBack.style.backgroundImage = `url(${allMediaLibrary[i].coverArt})`
+        trackTitle.innerText = allMediaLibrary[i].songName;
+        trackNo.innerText = allMediaLibrary[i].songNo + ' / ' + allMediaLibrary.length;
+        trackArtist.innerText = allMediaLibrary[i].artistName;
     })
 }
 songList.forEach(songNumber);
