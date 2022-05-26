@@ -61,20 +61,32 @@ const muteVol = document.querySelector('.mute-btn') // Mute Volume Function
 
 // Cover-Art and Styling selector------>
 const coverArt = document.getElementById('coverArt'); // Covert Art Selector
-const musicStyle = document.querySelector('.art-sec');
+const musicStyle = document.querySelector('.art-sec'); //covart behind round fill animation selector
 const coverBack = document.querySelector('.player-src'); // Cover Background
 const trackNo = document.querySelector('.playlist-number'); // Current Track Number
 const trackTitle = document.querySelector('.song-title'); // Current Track Title
 const trackArtist = document.querySelector('.song-artist') // Current Track Artist Name
 
+const trackToggle = document.querySelector('.playlist'); // It will toggle Playlist Menu in Mobile view!
+const themeSelect = document.querySelector('.theme-box') // Theme-box for different theme
+const themeSwitchBtn = document.getElementById('theme-toggle'); // Theme Toggle Button
+
+// Event Listener to open-close theme menu and Track-list---->
+themeSwitchBtn.addEventListener('click', () => {
+    themeSelect.classList.toggle('switcher')
+    console.log('hello')
+})
+trackToggle.addEventListener('click', () => {
+    trackToggle.classList.toggle('reveal');
+})
 
 // main audio Source, index and Sound Volume Set Here--------------->
 let i = 0;
 let gaana = new Audio(allMediaLibrary[i].songPath)
 gaana.volume = 0.2;
+gaana.src = allMediaLibrary[i].songPath;
 
 function songCurrentStatus() {
-    gaana.src = allMediaLibrary[i].songPath;
     coverArt.src = allMediaLibrary[i].coverArt;
     coverBack.style.backgroundImage = `url(${allMediaLibrary[i].coverArt})`
     trackTitle.innerText = allMediaLibrary[i].songName;
@@ -92,7 +104,7 @@ function gannaEnd() {
     songPauseAnimation()
 }
 
-// Song PLay/Pause and stopToggle--------->
+// Song PLay/Pause and stopToggle functions--------->
 
 function songplayAnimation() {
     masterPlay.classList.remove('fa-play');
@@ -117,10 +129,13 @@ function songPlayStatus() {
         songPauseAnimation()
     }
 }
+
+//Master - play/Pause , Previous/Next Song Button and their event listener---->
 masterPlay.addEventListener('click', () => {
     songPlayStatus()
 })
 
+//next song
 nextSong.addEventListener('click', () => {
     if (i < allMediaLibrary.length - 1) {
         i++;
@@ -133,7 +148,7 @@ nextSong.addEventListener('click', () => {
     }
     songPlayStatus()
 })
-
+//previous Song
 prevSong.addEventListener('click', () => {
     if (i > 0) {
         i--;
@@ -147,28 +162,36 @@ prevSong.addEventListener('click', () => {
     songPlayStatus()
 })
 
-songList.forEach(song => {
-    song.addEventListener('click', () => {
+let newArray = Array.from(songList)
 
-        if (song.classList.contains('active')) {
-            song.classList.remove('active')
+// function and event listner for song selection and play from song list--------> 
+function songNumber(songs, i) {
+    songs.addEventListener('click', () => {
 
-        }
-        else {
-            songList.forEach(songTo => {
-                songTo.classList.remove('active')
+        if (songs.classList.contains('active')) {
+            songs.classList.remove('active')
+        } else {
+            songList.forEach(song=>{
+                song.classList.remove('active')
             })
-            song.classList.add('active')
-
+            songs.classList.add('active')
         }
+        console.log(i)
+        gaana.src = allMediaLibrary[i].songPath;
+        songPlayStatus(i)
+        songCurrentStatus()
     })
-})
+}
+songList.forEach(songNumber);
 
+
+
+//song Stop---->
 stopBtn.addEventListener('click', () => {
     gannaEnd();
 })
 
-// On Song Time update ----- Time Update, Progress Bar Update----------->
+// On Song Time update, Progress Bar Update, current time update----------->
 gaana.addEventListener('timeupdate', () => {
     progressBar.setAttribute('max', gaana.duration)
     progressBar.value = gaana.currentTime;
@@ -191,9 +214,21 @@ gaana.addEventListener('timeupdate', () => {
 
     // Song End---->
     if (gaana.currentTime >= gaana.duration) {
-        gannaEnd();
+        if (i < allMediaLibrary.length - 1) {
+            i++;
+            gaana.src = allMediaLibrary[i].songPath;
+            songCurrentStatus()
+            songPlayStatus()
+            console.log(i)
+        } else {
+            i = 0;
+            gaana.src = allMediaLibrary[i].songPath;
+            songCurrentStatus()
+            songPlayStatus()
+        }
     }
 })
+
 
 progressBar.addEventListener('input', () => {
     gaana.currentTime = progressBar.value;

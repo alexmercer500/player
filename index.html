@@ -19,7 +19,7 @@
     <div class="main-box">
         <header>
             <h1>RM-Player</h1>
-            <h1>Theme</h1>
+            <h1 id="theme-toggle">Theme</h1>
         </header>
         <main>
             <div class="main-plate">
@@ -48,29 +48,41 @@
                     </div>
                 </div>
             </div>
-            <div class="vol-bar">
-                <i style="width: 55px;" class="mute-btn fa-solid fa-volume-high fa-2x"></i>
-                <input type="range" min="0" max="100" value="20" id="vol-bar">
-            </div>
-            <div class="progress">
-                <input class="seek-bar" type="range" min="0" value="0">
-                <div class="music-info">
-                    <div class="track-info">
-                        <h1 class="song-title">Lake</h1>
-                        <h2 class="song-artist">Janee</h2>
-                    </div>
-                    <div class="music-controller">
-                        <i class="fa-solid fa-backward fa-2x"></i>
-                        <i class="master-play fa-solid fa-play fa-3x"></i>
-                        <i class="fa-solid fa-forward fa-2x"></i>
-                        <i class="master-stop fa-solid fa-stop fa-2x"></i>
-                    </div>
-                    <span>
-                        <h1 class="current-time">0m:0s</h1>
-                        <h1>/</h1>
-                        <h1 class="song-duration">0m:0m</h1>
-                    </span>
+            <div class="down-section">
+                <div class="vol-bar">
+                    <i style="width: 55px;" class="mute-btn fa-solid fa-volume-high fa-2x"></i>
+                    <input type="range" min="0" max="100" value="20" id="vol-bar">
                 </div>
+                <div class="progress">
+                    <div class="progress-bar">
+                        <input class="seek-bar" type="range" min="0" value="0">
+                    </div>
+                    <div class="music-info">
+                        <div class="track-info">
+                            <h1 class="song-title">Lake</h1>
+                            <h2 class="song-artist">Janee</h2>
+                        </div>
+                        <div class="music-controller">
+                            <i class="fa-solid fa-backward fa-2x"></i>
+                            <i class="master-play fa-solid fa-play fa-3x"></i>
+                            <i class="fa-solid fa-forward fa-2x"></i>
+                            <i class="master-stop fa-solid fa-stop fa-2x"></i>
+                        </div>
+                        <span>
+                            <h1 class="current-time">0m:0s</h1>
+                            <h1 class="seperator">/</h1>
+                            <h1 class="song-duration">0m:0m</h1>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-box">
+                <button>Theme-1</button>
+                <button>Theme-2</button>
+                <button>Theme-3</button>
+                <button>Theme-4</button>
+                <button>Theme-5</button>
+                <button>Theme-6</button>
             </div>
         </main>
     </div>

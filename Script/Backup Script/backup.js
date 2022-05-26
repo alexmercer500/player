@@ -53,3 +53,18 @@ fetchSongList()
 // 4. Careless - NEFFEX!
 // 5. Why Do I - Unkown Brain
 // 6. It's Alright - Mother Mother
+
+songList.forEach(song => {
+    song.addEventListener('click', () => {
+
+        if (song.classList.contains('active')) {
+            song.classList.remove('active')
+        }
+        else {
+            songList.forEach(songTo => {
+                songTo.classList.remove('active')
+            })
+            song.classList.add('active')
+        }
+    })
+})
