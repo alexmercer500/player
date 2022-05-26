@@ -11,13 +11,14 @@
     --hover-color: #f86969;
 
     --mono-font: monospace;
+
 }
 
 .theme-two {
-    --body-primary-color: rgb(43, 43, 43);
-    --body-secondary-color: #000;
+    --body-primary-color: #e93d3d;
+    --body-secondary-color: #00E6FF;
     --style-color: #0d3e5a;
-    --text-color: #fff;
+    --text-color: #000;
     --border-color: #fff;
 
     /* secondary colors */
@@ -75,13 +76,12 @@
 body {
     background-image: linear-gradient(to right, #f195ca, #df4451);
     margin: 0 auto;
-    position: relative;
+    /* max-width: 1000px; */
 }
 
 img {
-    max-width: 250px;
+    width: 290px;
     border-radius: 50%;
-    /* display: none; */
 }
 
 .fa-solid {
@@ -102,20 +102,18 @@ h2 {
 header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 /* ----Cover Art and Info Styling----- */
 .main-box {
     background-image: linear-gradient(var(--body-primary-color), var(--body-secondary-color));
     padding: 10px;
-    max-width: 450px;
-    height: 100vh;
-    margin-inline: auto;
 }
 
-main {
-    position: relative;
+
+.main-plate {
+    outline: 1px solid red;
 }
 
 .art-style {
@@ -136,8 +134,8 @@ main {
     opacity: 0.6;
     background-size: cover;
     background-position: center;
-    max-width: 450px;
-    height: 320px;
+    max-width: 400px;
+    height: 400px;
 }
 
 .art-sec {
@@ -147,16 +145,15 @@ main {
     position: absolute;
     background-color: #fff;
     border-radius: 50%;
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
     transition: 0.3s linear;
 }
 
-.circle {
+.player-src .art-sec .circle {
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    background-color: #fff;
+    width: 290px;
+    height: 290px;
 }
 
 /* ----Cover Art Animation--- */
@@ -181,7 +178,7 @@ img {
     right: 2%;
     border-radius: 5px;
     padding: 0.25rem 0.6rem;
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    font-size: 1.5rem;
     outline: 2px solid #000;
     display: flex;
     justify-content: center;
@@ -197,15 +194,15 @@ img {
     box-shadow: 0 0 10px #fff;
     margin-inline: auto;
     font-family: 'ubuntu', sans-serif;
-    left: 0;
-    right: 0;
     bottom: 0;
+    background-color: #fff;
     width: 95%;
-    max-width: 450px;
+    max-width: 400px;
+    transform: scaleY(1);
     transform-origin: bottom;
     border-radius: 1em 1em 0 0;
     z-index: 100;
-    transform: translateY(85%);
+    transform: translateY(87%);
     transition: 0.3s linear;
 }
 
@@ -245,15 +242,10 @@ img {
     color: #e93d3d;
 }
 
-
-.down-section {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
 /* --------Volume Bar Styling Here------ */
 .vol-bar {
-    margin: 0 auto;
+
+    margin: 1rem auto;
     width: 70%;
     display: flex;
     justify-content: space-between;
@@ -266,7 +258,7 @@ img {
 }
 
 /* -------Current Song Info, Music Control and Progressbar Styling Here------- */
-
+.progress {}
 
 .progress .progress-bar {
     width: 95%;
@@ -274,12 +266,12 @@ img {
 }
 
 .music-info {
-    display: flex;
-    flex-direction: column-reverse;
-    margin: 1em 0 0 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-block: 2em;
 }
-
-.music-info>* {
+.music-info > * {
     margin-bottom: 1em;
 }
 
@@ -305,7 +297,7 @@ img {
 }
 
 .music-info span h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .track-info {
@@ -317,7 +309,6 @@ img {
 .fa-stop {
     display: none;
 }
-
 .seperator {
     display: none;
 }
@@ -350,157 +341,4 @@ input[type=range]::-webkit-slider-thumb {
     background-color: goldenrod;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
     cursor: pointer;
-}
-
-.theme-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    max-width: 400px;
-    gap: 0.25em;
-    padding: 0.50em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    z-index: 200;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: 0.3s ease-in-out;
-}
-
-#theme-toggle {
-    cursor: pointer;
-}
-
-.theme-box.switcher {
-    transform: scale(1, 1);
-}
-
-button {
-    cursor: pointer;
-    padding: 0.5em 1em;
-    font-size: 1rem;
-}
-
-/* ----------------Large Device Styling Starts here---------------------> */
-
-@media (min-width:50em) {
-
-    /* Body Container styling in bigger Devices------> */
-
-    .main-box {
-        max-width: 900px;
-        height: fit-content;
-        padding: 10px 30px;
-    }
-
-    /* cover art and playlist section styling */
-    .main-plate {
-        display: flex;
-        justify-content: space-between;
-        outline: 1px solid rgb(0, 0, 0);
-    }
-
-    .art-style {
-        position: relative;
-        outline: none;
-
-    }
-
-    .player-src {
-        width: 380px;
-        height: 380px;
-    }
-
-    .art-sec {
-        width: 300px;
-        height: 300px;
-    }
-
-    .circle {
-        width: 290px;
-        height: 290px;
-    }
-
-    img {
-        max-width: 290px;
-        height: 290px;
-    }
-
-    /* -----Playlist Section styling----- */
-    .playlist {
-        position: relative;
-        transform: translateY(0);
-        border-radius: 0;
-        width: fit-content;
-        background-image: inherit;
-        box-shadow: none;
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    .playlist h1 {
-        text-align: left;
-    }
-
-    .song-playing:hover {
-        transform: scale(1.1);
-        color: #e93d3d;
-        ;
-    }
-
-    /* volume-bar, music controller and progress bar status-------> */
-
-    .down-section {
-        display: block;
-    }
-
-    .vol-bar {
-        margin: 1em 0;
-        width: 45.5%;
-        justify-content: space-between;
-    }
-
-    .music-info {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1em 0 0 0;
-    }
-
-    .music-controller {
-        margin-inline: 0;
-
-    }
-
-    .track-info {
-        width: 200px;
-        text-align: left;
-    }
-
-    .music-info span {
-        width: 180px;
-        justify-content: center;
-    }
-
-    .progress .progress-bar {
-        width: 100%;
-    }
-
-    .fa-stop {
-        display: block;
-    }
-
-    .seperator {
-        display: block;
-    }
-
-    .track-info h1 {
-        font-weight: 400;
-    }
-
-    .music-info span h1 {
-        font-size: 1.3rem;
-    }
 }

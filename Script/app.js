@@ -72,10 +72,7 @@ const themeSelect = document.querySelector('.theme-box') // Theme-box for differ
 const themeSwitchBtn = document.getElementById('theme-toggle'); // Theme Toggle Button
 
 // Event Listener to open-close theme menu and Track-list---->
-themeSwitchBtn.addEventListener('click', () => {
-    themeSelect.classList.toggle('switcher')
-    console.log('hello')
-})
+
 trackToggle.addEventListener('click', () => {
     trackToggle.classList.toggle('reveal');
 })
@@ -107,13 +104,11 @@ function gannaEnd() {
 // Song PLay/Pause and stopToggle functions--------->
 
 function songplayAnimation() {
-    masterPlay.classList.remove('fa-play');
-    masterPlay.classList.add('fa-pause');
+    masterPlay.classList.replace('fa-play','fa-pause')
 }
 
 function songPauseAnimation() {
-    masterPlay.classList.remove('fa-pause');
-    masterPlay.classList.add('fa-play')
+    masterPlay.classList.replace('fa-pause','fa-play')
 }
 
 function songPlayStatus() {
@@ -141,7 +136,7 @@ let newArray = Array.from(songList);
 function activeSong() {
     if (newArray[i].classList.contains('active')) {
         newArray[i].classList.remove('active');
-        
+
     }
     else {
         newArray.forEach(songArr => {
@@ -243,12 +238,13 @@ gaana.addEventListener('timeupdate', () => {
             gaana.src = allMediaLibrary[i].songPath;
             songCurrentStatus()
             songPlayStatus()
-            console.log(i)
+            activeSong()
         } else {
             i = 0;
             gaana.src = allMediaLibrary[i].songPath;
             songCurrentStatus()
             songPlayStatus()
+            activeSong()
         }
     }
 })
@@ -280,18 +276,52 @@ volBar.addEventListener('input', () => {
 muteVol.addEventListener('click', () => {
     if (gaana.volume !== 0) {
         gaana.volume = 0;
-        muteVol.classList.remove('fa-volume-high');
-        muteVol.classList.add('fa-volume-xmark')
+        muteVol.classList.replace('fa-volume-high','fa-volume-xmark')
         volBarCtrl()
 
     }
     else {
         gaana.volume = 0.2;
-        muteVol.classList.remove('fa-volume-xmark');
-        muteVol.classList.add('fa-volume-high')
+        muteVol.classList.replace('fa-volume-xmark','fa-volume-high')
         volBarCtrl()
     }
 })
 
+// Theme Selection Starts here---------->
 
+themeSwitchBtn.addEventListener('click', () => {
+    themeSelect.classList.toggle('switcher')
+    console.log('hello')
+})
 
+let themeOptions = Array.from(themeSelect.children);
+
+themeOptions.forEach(theme =>{
+    theme.addEventListener('click', ()=>{
+        
+        let currentTheme = theme.value;
+
+        switch (currentTheme) {
+            case 'theme-1':
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four') // Theme one
+                break;
+    
+            case 'theme-2':
+                document.body.classList.add('theme-two')
+                document.body.classList.remove('theme-three', 'theme-four') // Theme Two
+                break;
+    
+            case 'theme-3':
+                document.body.classList.add('theme-three')
+                document.body.classList.remove('theme-two', 'theme-four') // Theme Three
+                break;
+    
+            case 'theme-4':
+                document.body.classList.add('theme-four')
+                document.body.classList.remove('theme-two', 'theme-three') // Theme Four
+                break;
+            default:
+                break;
+        }
+    })
+})
