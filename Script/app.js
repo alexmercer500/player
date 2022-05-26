@@ -132,20 +132,39 @@ function songPlayStatus() {
 
 //Master - play/Pause , Previous/Next Song Button and their event listener---->
 masterPlay.addEventListener('click', () => {
+    activeSong()
     songPlayStatus()
 })
 
+let newArray = Array.from(songList);
+
+function activeSong() {
+    if (newArray[i].classList.contains('active')) {
+        newArray[i].classList.remove('active');
+        
+    }
+    else {
+        newArray.forEach(songArr => {
+            songArr.classList.remove('active')
+        })
+        newArray[i].classList.add('active');
+    }
+
+}
 //next song
 nextSong.addEventListener('click', () => {
     if (i < allMediaLibrary.length - 1) {
         i++;
         gaana.src = allMediaLibrary[i].songPath;
         songCurrentStatus()
+        activeSong()
     } else {
         i = 0;
         gaana.src = allMediaLibrary[i].songPath;
         songCurrentStatus()
+        activeSong()
     }
+
     songPlayStatus()
 })
 //previous Song
@@ -154,15 +173,16 @@ prevSong.addEventListener('click', () => {
         i--;
         gaana.src = allMediaLibrary[i].songPath;
         songCurrentStatus()
+        activeSong()
     } else {
         i = allMediaLibrary.length - 1;
         gaana.src = allMediaLibrary[i].songPath;
         songCurrentStatus()
+        activeSong()
     }
     songPlayStatus()
 })
 
-let newArray = Array.from(songList)
 
 // function and event listner for song selection and play from song list--------> 
 function songNumber(songs, i) {
@@ -171,7 +191,7 @@ function songNumber(songs, i) {
         if (songs.classList.contains('active')) {
             songs.classList.remove('active')
         } else {
-            songList.forEach(song=>{
+            songList.forEach(song => {
                 song.classList.remove('active')
             })
             songs.classList.add('active')
