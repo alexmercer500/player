@@ -86,8 +86,11 @@ img {
 
 .fa-solid {
     cursor: pointer;
+    transition: 0.2s linear;
 }
-
+.fa-solid:hover {
+    color: #e93d3d;
+}
 h1 {
     font-size: 1.5rem;
 }
