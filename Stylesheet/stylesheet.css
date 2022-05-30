@@ -14,7 +14,7 @@
 }
 
 .theme-two {
-    --body-primary-color: rgb(43, 43, 43);
+    --body-primary-color: #2b2b2b;
     --body-secondary-color: #000;
     --style-color: #0d3e5a;
     --text-color: #fff;
@@ -39,8 +39,6 @@
 
     --webkit-color: #e76418;
     --hover-color: #00675F;
-
-    --mono-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .theme-four {
@@ -55,7 +53,34 @@
     --webkit-color: #790067;
     --hover-color: #B8A6B3;
 
-    --mono-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.theme-five {
+    --body-primary-color: #870000;
+    --body-secondary-color: #190A05;
+    --style-color: #0026ff;
+    --text-color: #ffffff;
+    --border-color: #083625;
+
+    /* secondary colors */
+
+    --webkit-color: #790067;
+    --hover-color: #B8A6B3;
+
+}
+
+.theme-six {
+    --body-primary-color: #ff6e7f;
+    --body-secondary-color: #bfe9ff;
+    --style-color: #F9F871;
+    --text-color: #300E68;
+    --border-color: #FFFADE;
+
+    /* secondary colors */
+
+    --webkit-color: #790067;
+    --hover-color: #B8A6B3;
+
 }
 
 
@@ -73,9 +98,10 @@
 }
 
 body {
-    background-image: linear-gradient(to right, #f195ca, #df4451);
+    background-image: linear-gradient(to bottom, var(--body-secondary-color), var(--body-primary-color));
     margin: 0 auto;
     position: relative;
+    height: 100vh;
 }
 
 img {
@@ -88,9 +114,11 @@ img {
     cursor: pointer;
     transition: 0.2s linear;
 }
+
 .fa-solid:hover {
     color: #e93d3d;
 }
+
 h1 {
     font-size: 1.5rem;
 }
@@ -359,7 +387,7 @@ input[type=range]::-webkit-slider-thumb {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #fff;
+    background-color: var(--body-secondary-color);
     max-width: 400px;
     gap: 0.25em;
     padding: 0.50em;
@@ -383,6 +411,36 @@ button {
     cursor: pointer;
     padding: 0.5em 1em;
     font-size: 1rem;
+}
+
+button:nth-child(1) {
+    background-image: linear-gradient(#fff, #00E6FF);
+    color: var(--text-color);
+}
+
+button:nth-child(2) {
+    background-image: linear-gradient(#2b2b2b, #000);
+    color: var(--text-color);
+}
+
+button:nth-child(3) {
+    background-image: linear-gradient(#00CD9A, #00e6ff);
+    color: var(--text-color);
+}
+
+button:nth-child(4) {
+    background-image: linear-gradient(#FF00DE, #00e6ff);
+    color: var(--text-color);
+}
+
+button:nth-child(5) {
+    background-image: linear-gradient(#870000, #190a05);
+    color: var(--text-color);
+}
+
+button:nth-child(6) {
+    background-image: linear-gradient(#ff6e7f,#bfe9ff);
+    color: var(--text-color);
 }
 
 /* ----------------Large Device Styling Starts here---------------------> */

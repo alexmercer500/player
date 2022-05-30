@@ -269,7 +269,7 @@ volBarCtrl();
 
 volBar.addEventListener('input', () => {
     gaana.volume = volBar.value / 100;
-    gaana.volume == 0 ?muteVol.classList.replace('fa-volume-high', 'fa-volume-xmark'): muteVol.classList.replace('fa-volume-xmark', 'fa-volume-high');
+    gaana.volume == 0 ? muteVol.classList.replace('fa-volume-high', 'fa-volume-xmark') : muteVol.classList.replace('fa-volume-xmark', 'fa-volume-high');
     volBarCtrl();
 })
 
@@ -302,22 +302,32 @@ themeOptions.forEach(theme => {
 
         switch (currentTheme) {
             case 'theme-1':
-                document.body.classList.remove('theme-two', 'theme-three', 'theme-four') // Theme one
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-five', 'theme-six') // Theme one
                 break;
 
             case 'theme-2':
                 document.body.classList.add('theme-two')
-                document.body.classList.remove('theme-three', 'theme-four') // Theme Two
+                document.body.classList.remove('theme-three', 'theme-four','theme-five', 'theme-six') // Theme Two
                 break;
 
             case 'theme-3':
                 document.body.classList.add('theme-three')
-                document.body.classList.remove('theme-two', 'theme-four') // Theme Three
+                document.body.classList.remove('theme-two', 'theme-four','theme-five', 'theme-six') // Theme Three
                 break;
 
             case 'theme-4':
                 document.body.classList.add('theme-four')
-                document.body.classList.remove('theme-two', 'theme-three') // Theme Four
+                document.body.classList.remove('theme-two', 'theme-three','theme-five', 'theme-six') // Theme Four
+                break;
+
+            case 'theme-5':
+                document.body.classList.add('theme-five')
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-six') // Theme Four
+                break;
+
+            case 'theme-6':
+                document.body.classList.add('theme-six')
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-five') // Theme Four
                 break;
             default:
                 break;
