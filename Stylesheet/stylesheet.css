@@ -31,8 +31,8 @@
 .theme-three {
     --body-primary-color: #00CD9A;
     --body-secondary-color: #00E6FF;
-    --style-color: #140841;
-    --text-color: #ffffff;
+    --style-color: #552C2C;
+    --text-color: #140841;
     --border-color: #7F325D;
 
     /* secondary colors */
@@ -45,7 +45,7 @@
     --body-primary-color: #FF00DE;
     --body-secondary-color: #00E6FF;
     --style-color: #3cff00;
-    --text-color: #52424E;
+    --text-color: #000000;
     --border-color: #007C4F;
 
     /* secondary colors */
@@ -116,7 +116,7 @@ img {
 }
 
 .fa-solid:hover {
-    color: #e93d3d;
+    color:var(--style-color);
 }
 
 h1 {
@@ -213,7 +213,7 @@ img {
     border-radius: 5px;
     padding: 0.25rem 0.6rem;
     font-size: clamp(1.2rem, 5vw, 1.5rem);
-    outline: 2px solid #000;
+    outline: 2px solid var(--text-color);
     display: flex;
     justify-content: center;
 }
@@ -273,7 +273,7 @@ img {
 
 .song-playing.active {
     transform: scale(1.1);
-    color: #e93d3d;
+    color: var(--style-color);
 }
 
 
@@ -387,7 +387,8 @@ input[type=range]::-webkit-slider-thumb {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--body-secondary-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 2px solid #000;
     max-width: 400px;
     gap: 0.25em;
     padding: 0.50em;
@@ -415,12 +416,12 @@ button {
 
 button:nth-child(1) {
     background-image: linear-gradient(#fff, #00E6FF);
-    color: var(--text-color);
+    color: #000;
 }
 
 button:nth-child(2) {
     background-image: linear-gradient(#2b2b2b, #000);
-    color: var(--text-color);
+    color: #fff;
 }
 
 button:nth-child(3) {
@@ -435,7 +436,7 @@ button:nth-child(4) {
 
 button:nth-child(5) {
     background-image: linear-gradient(#870000, #190a05);
-    color: var(--text-color);
+    color: #fff;
 }
 
 button:nth-child(6) {
@@ -506,8 +507,7 @@ button:nth-child(6) {
 
     .song-playing:hover {
         transform: scale(1.1);
-        color: #e93d3d;
-        ;
+        color: var(--style-color);
     }
 
     /* volume-bar, music controller and progress bar status-------> */
