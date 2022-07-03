@@ -41,6 +41,13 @@ let allMediaLibrary = [{
     artistName: "Mother Mother",
     songPath: "/Source/music/Alright.mp3",
     coverArt: "/Source/CoverArt/Alright.jpg"
+},
+{
+    songNo: 7,
+    songName: "Misery x CPR",
+    artistName: "Maroon 5, CupcakKe",
+    songPath: "/Source/music/CPR.mp3",
+    coverArt: "/Source/CoverArt/CPR.jpg"
 }]
 
 
@@ -302,32 +309,32 @@ themeOptions.forEach(theme => {
 
         switch (currentTheme) {
             case 'theme-1':
-                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-five', 'theme-six') // Theme one
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four', 'theme-five', 'theme-six') // Theme one
                 break;
 
             case 'theme-2':
                 document.body.classList.add('theme-two')
-                document.body.classList.remove('theme-three', 'theme-four','theme-five', 'theme-six') // Theme Two
+                document.body.classList.remove('theme-three', 'theme-four', 'theme-five', 'theme-six') // Theme Two
                 break;
 
             case 'theme-3':
                 document.body.classList.add('theme-three')
-                document.body.classList.remove('theme-two', 'theme-four','theme-five', 'theme-six') // Theme Three
+                document.body.classList.remove('theme-two', 'theme-four', 'theme-five', 'theme-six') // Theme Three
                 break;
 
             case 'theme-4':
                 document.body.classList.add('theme-four')
-                document.body.classList.remove('theme-two', 'theme-three','theme-five', 'theme-six') // Theme Four
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-five', 'theme-six') // Theme Four
                 break;
 
             case 'theme-5':
                 document.body.classList.add('theme-five')
-                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-six') // Theme Four
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four', 'theme-six') // Theme Four
                 break;
 
             case 'theme-6':
                 document.body.classList.add('theme-six')
-                document.body.classList.remove('theme-two', 'theme-three', 'theme-four','theme-five') // Theme Four
+                document.body.classList.remove('theme-two', 'theme-three', 'theme-four', 'theme-five') // Theme Four
                 break;
             default:
                 break;

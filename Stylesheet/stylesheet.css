@@ -461,6 +461,7 @@ button:nth-child(6) {
         display: flex;
         justify-content: space-between;
         outline: 1px solid rgb(0, 0, 0);
+        max-height: 380px;
     }
 
     .art-style {
@@ -499,6 +500,9 @@ button:nth-child(6) {
         box-shadow: none;
         margin-left: auto;
         margin-right: 0;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-block: auto;
     }
 
     .playlist h1 {
@@ -563,5 +567,14 @@ button:nth-child(6) {
 
     .music-info span h1 {
         font-size: 1.3rem;
+    }
+
+    /*  scroll bar animation styling */
+
+    ::-webkit-scrollbar {
+        width: 0.5em;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-image: linear-gradient(var(--body-secondary-color),var(--body-primary-color));
     }
 }
