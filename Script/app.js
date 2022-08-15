@@ -5,49 +5,76 @@ let allMediaLibrary = [{
     songNo: 1,
     songName: "Lake",
     artistName: "Janee",
-    songPath: "/Source/music/Lake.mp3",
+    songPath: "/Source/music/Lake.aac",
     coverArt: "/Source/CoverArt/Lake.jpg"
 },
 {
     songNo: 2,
     songName: "Royalty",
     artistName: "Egzod & Maestro Chives",
-    songPath: "/Source/music/Royalty.mp3",
+    songPath: "/Source/music/Royalty.aac",
     coverArt: "/Source/CoverArt/Royalty.jpg"
 },
 {
     songNo: 3,
     songName: "Symphony",
     artistName: "Arc North",
-    songPath: "/Source/music/Symphony.mp3",
+    songPath: "/Source/music/Symphony.aac",
     coverArt: "/Source/CoverArt/Symphony.jpg"
 },
 {
     songNo: 4,
     songName: "Careless",
     artistName: "NEFFEX!",
-    songPath: "/Source/music/Careless.mp3",
+    songPath: "/Source/music/Careless.aac",
     coverArt: "/Source/CoverArt/Careless.jpg"
 },
 {
     songNo: 5,
     songName: "Why Do I",
     artistName: "Unkown Brain",
-    songPath: "/Source/music/Unkown.mp3",
+    songPath: "/Source/music/Unkown.aac",
     coverArt: "/Source/CoverArt/Unknown.jpg"
 }, {
     songNo: 6,
     songName: "It's Alright",
     artistName: "Mother Mother",
-    songPath: "/Source/music/Alright.mp3",
+    songPath: "/Source/music/Alright.aac",
     coverArt: "/Source/CoverArt/Alright.jpg"
 },
 {
     songNo: 7,
     songName: "Misery x CPR",
     artistName: "Maroon 5, CupcakKe",
-    songPath: "/Source/music/CPR.mp3",
+    songPath: "/Source/music/CPR.aac",
     coverArt: "/Source/CoverArt/CPR.jpg"
+},
+{
+    songNo: 8,
+    songName: "XOXO",
+    artistName: "JEON SOMI",
+    songPath: "/Source/music/XOXO.aac",
+    coverArt: "/Source/CoverArt/XOXO.jpg"
+}, {
+    songNo: 9,
+    songName: "Ari-Ari",
+    artistName: "Ritviz & Nucleya",
+    songPath: "/Source/music/Ari-Ari.aac",
+    coverArt: "/Source/CoverArt/baaraat.jpg"
+},
+{
+    songNo: 10,
+    songName: "Baaraat",
+    artistName: "Ritviz & Nucleya",
+    songPath: "/Source/music/Baaraat.aac",
+    coverArt: "/Source/CoverArt/baaraat.jpg"
+},
+{
+    songNo: 11,
+    songName: "Krusty Krab",
+    artistName: "Spongebob",
+    songPath: "/Source/music/Krusty.aac",
+    coverArt: "/Source/CoverArt/Krusty.jpg"
 }]
 
 
@@ -98,7 +125,7 @@ function songCurrentStatus() {
     trackNo.innerText = allMediaLibrary[i].songNo + ' / ' + allMediaLibrary.length;
     trackArtist.innerText = allMediaLibrary[i].artistName;
 }
-
+songCurrentStatus()
 // Song Stop or end function here----->
 function gannaEnd() {
     gaana.pause();
@@ -143,7 +170,6 @@ let newArray = Array.from(songList);
 function activeSong() {
     if (newArray[i].classList.contains('active')) {
         newArray[i].classList.remove('active');
-
     }
     else {
         newArray.forEach(songArr => {
@@ -217,6 +243,16 @@ stopBtn.addEventListener('click', () => {
 })
 
 // On Song Time update, Progress Bar Update, current time update----------->
+
+function songTime(){
+    let mm = Math.floor((gaana.currentTime / 60));
+    let ss = Math.floor((gaana.currentTime % 60));
+    get.innerText = `${mm}m:${ss}s`;
+    let mmm = Math.floor((gaana.duration / 60));
+    let sss = Math.floor((gaana.duration % 60));
+    get2.innerText = `${mmm}m:${sss}s`
+}
+
 gaana.addEventListener('timeupdate', () => {
     progressBar.setAttribute('max', gaana.duration)
     progressBar.value = gaana.currentTime;
@@ -225,12 +261,7 @@ gaana.addEventListener('timeupdate', () => {
         #fff ${((gaana.currentTime / gaana.duration) * 100)}% )`
 
     //to Display current duration of song------>
-    let mm = Math.floor((gaana.currentTime / 60));
-    let ss = Math.floor((gaana.currentTime % 60));
-    get.innerText = `${mm}m:${ss}s`;
-    let mmm = Math.floor((gaana.duration / 60));
-    let sss = Math.floor((gaana.duration % 60));
-    get2.innerText = `${mmm}m:${sss}s`
+    songTime()
 
     //Behind Cover Art style -------->
     musicStyle.style.backgroundImage = `conic-gradient(var(--style-color) 
